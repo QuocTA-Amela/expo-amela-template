@@ -1,7 +1,7 @@
 {
   "name": "expo-amela-template",
   "main": "expo-router/entry",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "scripts": {
     "start": "expo start",
     "reset-project": "node ./scripts/reset-project.js",
@@ -10,7 +10,9 @@
     "web": "expo start --web",
     "test": "jest --watchAll",
     "lint": "expo lint",
-    "prebuild": "npx expo prebuild"
+    "prebuild": "npx expo prebuild",
+    "android-build-apk": "yarn prebuild && rm -rf build && rm -rf android/build && cd android && ./gradlew assembleRelease && cd ..",
+    "open-folder-apk": "open ./android/app/build/outputs/apk"
   },
   "jest": {
     "preset": "jest-expo"
@@ -19,6 +21,7 @@
     "@expo/vector-icons": "^14.0.2",
     "@react-navigation/native": "^6.0.2",
     "expo": "^51.0.25",
+    "expo-build-properties": "~0.12.5",
     "expo-constants": "~16.0.2",
     "expo-dev-client": "~4.0.21",
     "expo-font": "~12.0.9",
