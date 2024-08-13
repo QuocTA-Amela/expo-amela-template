@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "expo-amela-template",
-    "slug": "expo-amela-template",
+    "name": "Dev DemoApp",
+    "slug": "Dev DemoApp",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -13,12 +13,17 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
       "supportsTablet": true,
       "buildNumber": "1.0.0",
       "infoPlist": {
         "NSMicrophoneUsageDescription": "This app uses the micro for voice call and video call.",
         "NSCameraUsageDescription": "This app uses the camera for video call."
-      }
+      },
+      "bundleIdentifier": "com.demoapp.dev"
     },
     "android": {
       "adaptiveIcon": {
@@ -29,7 +34,8 @@
       "permissions": [
         "android.permission.CAMERA",
         "android.permission.RECORD_AUDIO"
-      ]
+      ],
+      "package": "com.demoapp.dev"
     },
     "web": {
       "bundler": "metro",
