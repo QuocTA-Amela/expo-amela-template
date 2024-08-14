@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Dev DemoApp",
-    "slug": "Dev DemoApp",
+    "slug": "demoapp-dev",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -64,6 +64,12 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "runtimeVersion": "1.0.0",
+    "updates": {
+      "requestHeaders": {
+        "expo-channel-name": "main"
+      }
     }
   }
 }
