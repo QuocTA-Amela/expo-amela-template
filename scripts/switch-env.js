@@ -72,6 +72,7 @@ const androidVerName = getEnvValue(
 const appName = getEnvValue(envPath, "EXPO_PUBLIC_APP_NAME");
 const androidAppId = getEnvValue(envPath, "EXPO_PUBLIC_ANDROID_APP_ID");
 const iosAppId = getEnvValue(envPath, "EXPO_PUBLIC_IOS_APP_ID");
+const slugName = getEnvValue(envPath, "EXPO_PUBLIC_SLUG_NAME");
 
 // ANDROID: Modify build.gradle file
 const buildAppGradleContent = fs.readFileSync(buildGradlePath, "utf8");
@@ -87,7 +88,7 @@ console.log(
 const appJSONContent = fs.readFileSync(appJSONPath, "utf-8");
 const newAppJSONContent = appJSONContent
   .replace(/"name": .+/, `"name": "${appName}",`)
-  .replace(/"slug": .+/, `"slug": "${appName}",`)
+  .replace(/"slug": .+/, `"slug": "${slugName}",`)
   .replace(/"package": .+/, `"package": "${androidAppId}"`)
   .replace(/"bundleIdentifier": .+/, `"bundleIdentifier": "${iosAppId}"`);
 fs.writeFileSync(appJSONPath, newAppJSONContent);
