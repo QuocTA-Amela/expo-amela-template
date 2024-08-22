@@ -73,6 +73,7 @@ const appName = getEnvValue(envPath, "EXPO_PUBLIC_APP_NAME");
 const androidAppId = getEnvValue(envPath, "EXPO_PUBLIC_ANDROID_APP_ID");
 const iosAppId = getEnvValue(envPath, "EXPO_PUBLIC_IOS_APP_ID");
 const slugName = getEnvValue(envPath, "EXPO_PUBLIC_SLUG_NAME");
+const channelName = getEnvValue(envPath, "EXPO_PUBLIC_CHANNEL_NAME");
 
 // ANDROID: Modify build.gradle file
 const buildAppGradleContent = fs.readFileSync(buildGradlePath, "utf8");
@@ -90,6 +91,7 @@ const newAppJSONContent = appJSONContent
   .replace(/"name": .+/, `"name": "${appName}",`)
   .replace(/"slug": .+/, `"slug": "${slugName}",`)
   .replace(/"package": .+/, `"package": "${androidAppId}"`)
-  .replace(/"bundleIdentifier": .+/, `"bundleIdentifier": "${iosAppId}"`);
+  .replace(/"bundleIdentifier": .+/, `"bundleIdentifier": "${iosAppId}"`)
+  .replace(/"expo-channel-name": .+/, `"expo-channel-name": "${channelName}"`);
 fs.writeFileSync(appJSONPath, newAppJSONContent);
 console.log(`Modified app.json file (${appJSONPath}) to ${env} environment`);

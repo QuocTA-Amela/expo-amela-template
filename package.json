@@ -1,7 +1,7 @@
 {
   "name": "expo-amela-template",
   "main": "expo-router/entry",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "scripts": {
     "start": "expo start",
     "web": "expo start --web",
@@ -26,6 +26,8 @@
     "ios-local-dev-release": "yarn env:dev && yarn prebuild && yarn ios-local-release",
     "ios-local-stg-release": "yarn env:staging && yarn prebuild && yarn ios-local-release",
     "ios-local-prd-release": "yarn env:production && yarn prebuild && yarn ios-local-release",
+    "ios-remote-dev-release": "yarn env:dev && eas build -p ios --profile develop",
+    "ios-remote-stg-release": "yarn env:staging && eas build -p ios --profile staging",
     "android-local-dev-debug": "yarn env:dev && yarn prebuild && yarn android-local-debug",
     "android-local-stg-debug": "yarn env:staging && yarn prebuild && yarn android-local-debug",
     "android-local-prod-debug": "yarn env:production && yarn prebuild && yarn android-local-debug",
