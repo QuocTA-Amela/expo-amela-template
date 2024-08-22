@@ -3,15 +3,17 @@ import * as Updates from "expo-updates";
 
 const useEasUpdate = () => {
   const onFetchUpdateAsync = async () => {
-    try {
-      const update = await Updates.checkForUpdateAsync();
+    if (process.env.NODE_ENV !== "development") {
+      try {
+        const update = await Updates.checkForUpdateAsync();
 
-      if (update.isAvailable) {
-        await Updates.fetchUpdateAsync();
-        await Updates.reloadAsync();
+        if (update.isAvailable) {
+          await Updates.fetchUpdateAsync();
+          await Updates.reloadAsync();
+        }
+      } catch (error) {
+        alert(`Error fetching latest Expo update: ${error}`);
       }
-    } catch (error) {
-      alert(`Error fetching latest Expo update: ${error}`);
     }
   };
   return {
