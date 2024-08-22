@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "DemoApp",
+    "name": "Dev DemoApp",
     "slug": "demoapp",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -23,7 +23,7 @@
         "NSMicrophoneUsageDescription": "This app uses the micro for voice call and video call.",
         "NSCameraUsageDescription": "This app uses the camera for video call."
       },
-      "bundleIdentifier": ""
+      "bundleIdentifier": "com.demoapp.develop"
     },
     "android": {
       "adaptiveIcon": {
@@ -35,7 +35,7 @@
         "android.permission.CAMERA",
         "android.permission.RECORD_AUDIO"
       ],
-      "package": ""
+      "package": "com.demoapp.develop"
     },
     "web": {
       "bundler": "metro",
@@ -68,7 +68,7 @@
     "runtimeVersion": "1.0.0",
     "updates": {
       "requestHeaders": {
-        "expo-channel-name": ""
+        "expo-channel-name": "develop"
       }
     },
     "owner": "hades-amela-reactnative"
