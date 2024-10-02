@@ -44,6 +44,7 @@
     },
     "plugins": [
       "expo-router",
+      "expo-localization",
       [
         "react-native-permissions",
         {
@@ -60,7 +61,8 @@
             "useLegacyPackaging": true
           }
         }
-      ]
+      ],
+      "expo-localization"
     ],
     "experiments": {
       "typedRoutes": true
